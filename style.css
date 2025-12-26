@@ -235,3 +235,50 @@ input[type=number] {
         letter-spacing: 1.5px;
     }
 }
+/* ============================= */
+/* HEADER LOGO KASIR - FIXED */
+/* ============================= */
+
+.kasir-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 80px;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+/* LOGO */
+.kasir-header img {
+    height: 52px;
+    max-width: 85%;
+    object-fit: contain;
+}
+
+/* Supaya konten tidak ketutup header */
+#kasirPanel {
+    padding-top: 90px;
+}
+
+/* HP kecil */
+@media (max-width: 360px) {
+    .kasir-header {
+        height: 70px;
+    }
+
+    .kasir-header img {
+        height: 45px;
+    }
+
+    #kasirPanel {
+        padding-top: 80px;
+    }
+}
