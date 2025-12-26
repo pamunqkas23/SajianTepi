@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
+<head> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kasir UMKM - Sajian Tepi</title>
+<title>Sajian Tepi Kasir Aplikasi</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- HOME PAGE -->
-<div id="homePage" class="page centered">
-    <h1>SAJIAN TEPI</h1>
+<div id="homePage" class="page home">
+    <div class="logo-area">
+        <img src="logo2.jpg" alt="Sajian Tepi">
+    </div>
+
     <div class="home-buttons">
-        <button onclick="login('kasir')">Kasir</button>
-        <button class="secondary" onclick="showAdminLogin()">Admin</button>
+        <button class="btn-primary" onclick="login('kasir')">KASIR</button>
+        <button class="btn-primary" onclick="showAdminLogin()">ADMIN</button>
     </div>
 </div>
 
 <!-- ADMIN LOGIN PAGE -->
-<div id="adminLoginPage" class="page centered" style="display:none;">
-    <h2>Login Admin</h2>
-    <input type="password" id="adminPinInput" placeholder="PIN Admin">
-    <div class="login-buttons">
-        <button onclick="login('admin')">Masuk</button>
-        <button class="secondary" onclick="backHome()">Batal</button>
-    </div>
+<div id="adminLoginPage" class="page login-admin" style="display:none;">
+    <h2>LOGIN ADMIN</h2>
+
+    <input type="password" id="adminPinInput" placeholder="Masukkan PIN Admin">
+
+    <button class="btn-primary" onclick="login('admin')">MASUK</button>
+    <button class="btn-secondary" onclick="backHome()">BATAL</button>
 </div>
+
 
 <!-- ADMIN PANEL -->
 <div id="adminPanel" class="page" style="display:none;">
