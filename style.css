@@ -1,0 +1,143 @@
+/* Reset & font */
+body, html {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+}
+
+.page {
+    padding: 15px;
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1d72b8;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+button.secondary {
+    background-color: #6c757d;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.logout-btn {
+    background-color: #e74c3c;
+    width: 100%;
+    margin-top: 10px;
+}
+.logout-btn:hover { background-color: #c0392b; }
+
+/* Box */
+.box {
+    background: #fff;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 12px;
+    width: 95%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Input & Select */
+input[type="text"], input[type="number"], select {
+    padding: 10px;
+    margin: 8px 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    border-color: #1d72b8;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto; /* scroll jika terlalu panjang */
+}
+
+.daftar-barang-nama, .keranjang-nama { width: 50%; display: inline-block; }
+.daftar-barang-harga, .keranjang-harga { width: 30%; display: inline-block; text-align: right; }
+.daftar-barang-btn, .keranjang-qty { width: 20%; display: inline-block; text-align: center; }
+
+/* Filter Box */
+.filter-box {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Keranjang buttons */
+.keranjang-qty button {
+    padding: 6px 12px;
+    margin: 0 2px;
+    font-size: 14px;
+}
+
+/* Admin Riwayat */
+#riwayatList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+}
+#riwayatList button {
+    background-color: #e67e22;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+#riwayatList button:hover { background-color: #d35400; }
+
+/* Remove number spinners */
+input[type=number] {
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 480px){
+    .box { padding: 12px; }
+    button { font-size: 15px; padding: 10px; }
+    .daftar-barang-nama, .keranjang-nama { width: 55%; }
+    .daftar-barang-harga, .keranjang-harga { width: 25%; }
+    .daftar-barang-btn, .keranjang-qty { width: 20%; }
+    input[type="text"], input[type="number"], select { font-size: 15px; }
+    .filter-box { flex-direction: column; }
+    #keranjangList, #daftarBarang, #riwayatList { max-height: 250px; }
+}

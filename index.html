@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kasir UMKM - Sajian Tepi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HOME PAGE -->
+<div id="homePage" class="page centered">
+    <h1>SAJIAN TEPI</h1>
+    <div class="home-buttons">
+        <button onclick="login('kasir')">Kasir</button>
+        <button class="secondary" onclick="showAdminLogin()">Admin</button>
+    </div>
+</div>
+
+<!-- ADMIN LOGIN PAGE -->
+<div id="adminLoginPage" class="page centered" style="display:none;">
+    <h2>Login Admin</h2>
+    <input type="password" id="adminPinInput" placeholder="PIN Admin">
+    <div class="login-buttons">
+        <button onclick="login('admin')">Masuk</button>
+        <button class="secondary" onclick="backHome()">Batal</button>
+    </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel" class="page" style="display:none;">
+    <h2>Admin Panel</h2>
+    <div class="box">
+        <h3>Tambah Kategori & Barang</h3>
+        <select id="kategoriSelect"></select>
+        <input type="text" id="barangInput" placeholder="Nama Barang">
+        <input type="text" id="hargaInput" placeholder="Harga">
+        <button onclick="tambahBarang()">Tambah</button>
+    </div>
+    <div class="box">
+        <h3>Hapus Barang</h3>
+        <select id="hapusBarangSelect"></select>
+        <button onclick="hapusBarang()">Hapus</button>
+    </div>
+    <div class="box">
+        <h3>Riwayat Transaksi</h3>
+        <ul id="riwayatList"></ul>
+        <button id="hapusSemuaBtn">Hapus Semua</button>
+    </div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+
+<!-- KASIR PANEL -->
+<div id="kasirPanel" class="page" style="display:none;">
+    <h2>SAJIAN TEPI</h2>
+
+    <div class="box filter-box">
+        <select id="kategoriKasir" onchange="tampilkanBarang()"></select>
+        <input type="text" id="cariBarang" placeholder="Cari Barang" oninput="tampilkanBarang()">
+    </div>
+
+    <div class="box">
+        <h3>Daftar Barang</h3>
+        <ul id="daftarBarang"></ul>
+    </div>
+
+    <div class="box">
+        <h3>Keranjang</h3>
+        <ul id="keranjangList"></ul>
+        <p>Total: <span id="totalHarga">Rp0</span></p>
+        <input type="text" id="bayar" placeholder="Bayar">
+        <button onclick="prosesBayar()">Bayar</button>
+        <p>Kembalian: <span id="kembalian">Rp0</span></p>
+    </div>
+
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
